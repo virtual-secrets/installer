@@ -6,7 +6,7 @@ metadata:
     {{- include "virtual-secrets.labels" . | nindent 4 }}
 rules:
 - apiGroups:
-  - reader.secrets-store.csi.x-k8s.io
+  - virtual-secrets.dev
   resources:
   - "*"
   verbs: ["*"]
@@ -20,3 +20,12 @@ rules:
   resources:
   - events
   verbs: ["create"]
+- apiGroups:
+  - rbac.authorization.k8s.io
+  resources:
+  - clusterroles
+  - clusterrolebindings
+  - roles
+  - rolebindings
+  - serviceaccounts
+  verbs: ["get", "list", "watch"]

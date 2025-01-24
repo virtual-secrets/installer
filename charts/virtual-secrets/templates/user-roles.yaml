@@ -11,7 +11,7 @@ metadata:
     "helm.sh/hook-delete-policy": before-hook-creation
 rules:
 - apiGroups:
-  - reader.secrets-store.csi.x-k8s.io
+  - virtual-secrets.dev
   resources:
   - secrets
   verbs: ["get", "list"]
