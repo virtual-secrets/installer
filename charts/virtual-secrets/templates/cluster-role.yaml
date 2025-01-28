@@ -16,6 +16,11 @@ rules:
   - secretproviderclasses
   verbs: ["get", "list", "watch"]
 - apiGroups:
+    - info.virtual-secrets.dev
+  resources:
+    - secretsources
+  verbs: ["get", "list", "watch"]
+- apiGroups:
   - ""
   resources:
   - events

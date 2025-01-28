@@ -36,8 +36,7 @@ spec:
       - name: server
         securityContext:
           {{- toYaml .Values.image.securityContext | nindent 10 }}
-{{/*        image: {{ include "image.registry" . }}/{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}*/}}
-        image: 0.1.acdc.appscode.ninja/library/virtual-secrets-operator:vs_linux_amd64
+        image: {{ include "image.registry" . }}/{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}
         imagePullPolicy: {{ .Values.imagePullPolicy  }}
         args:
         - run
