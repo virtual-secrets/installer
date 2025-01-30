@@ -19,7 +19,8 @@ rules:
     - info.virtual-secrets.dev
   resources:
     - secretsources
-  verbs: ["get", "list", "watch"]
+    - secretmetadatas
+  verbs: ["get", "list", "watch", "create", "update"]
 - apiGroups:
   - ""
   resources:
