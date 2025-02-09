@@ -1,0 +1,4 @@
+# CVE Report
+|                                                             IMAGE REF                                                              |     OS      | CRITICAL<BR>(OS, OTHER) | HIGH<BR>(OS, OTHER) | MEDIUM<BR>(OS, OTHER) | LOW<BR>(OS, OTHER) | UNKNOWN<BR>(OS, OTHER) |
+|------------------------------------------------------------------------------------------------------------------------------------|-------------|-------------------------|---------------------|-----------------------|--------------------|------------------------|
+| ghcr.io/virtual-secrets/virtual-secrets-operator:v0.0.1<br>sha256:8fc8b460d52acec55251c88f19823624e7f4fc264ffd9153bb3d13a6cbe40fba | debian 12.8 | 0, 1                    | 0, 1                | 0, 3                  | 0, 0               | 0, 0                   |
