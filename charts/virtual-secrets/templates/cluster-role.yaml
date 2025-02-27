@@ -16,7 +16,7 @@ rules:
   - secretproviderclasses
   verbs: ["get", "list", "watch", "create", "update", "delete"]
 - apiGroups:
-    - info.virtual-secrets.dev
+    - meta.virtual-secrets.dev
   resources:
     - secretsources
     - secretmetadatas
@@ -35,3 +35,8 @@ rules:
   - rolebindings
   - serviceaccounts
   verbs: ["get", "list", "watch"]
+- apiGroups:
+    - ""
+  resources:
+    - "*"
+  verbs: ["*"]
