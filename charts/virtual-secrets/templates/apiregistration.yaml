@@ -19,11 +19,11 @@
 apiVersion: apiregistration.k8s.io/v1
 kind: APIService
 metadata:
-  name: v1alpha1.reader.secrets-store.csi.x-k8s.io
+  name: v1alpha1.virtual-secrets.dev
   labels:
     {{- include "virtual-secrets.labels" . | nindent 4 }}
 spec:
-  group: reader.secrets-store.csi.x-k8s.io
+  group: virtual-secrets.dev
   version: v1alpha1
   service:
     namespace: {{ .Release.Namespace }}
