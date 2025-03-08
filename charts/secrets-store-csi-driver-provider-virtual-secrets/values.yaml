@@ -1,0 +1,41 @@
+image:
+  repository: ghcr.io/appscode/secrets-store-csi-driver-provider-virtual-secrets
+  pullPolicy: IfNotPresent
+  tag: v0.0.1
+
+nameOverride: ""
+fullnameOverride: ""
+providerVolume: "/etc/kubernetes/secrets-store-csi-providers"
+kubeletPath: "/var/lib/kubelet"
+
+podLabels: {}
+podAnnotations: {}
+
+affinity: {}
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 100Mi
+  limits:
+    cpu: 50m
+    memory: 100Mi
+
+priorityClassName: ""
+nodeSelector: {}
+
+tolerations: []
+
+port: 8989
+
+updateStrategy:
+  type: RollingUpdate
+
+imagePullSecrets: []
+
+rbac:
+  install: true
+
+securityContext:
+  privileged: false
+  allowPrivilegeEscalation: false

@@ -21,7 +21,8 @@ for dir in charts/*/; do
     dir=${dir##*/}
     num_files=$(find charts/${dir}/templates -type f | wc -l)
     echo $dir
-    if [ $num_files -le 1 ]; then
+    if [ $num_files -le 1 ] ||
+        [[ "$dir" = "secrets-store-csi-driver-provider-virtual-secrets" ]]; then
         make ct CT_COMMAND=lint TEST_CHARTS=charts/$dir
     else
         ns=app-$(date +%s | head -c 6)
