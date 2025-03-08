@@ -1,1 +1,1 @@
-- virtual-secrets/virtual-secrets-operator:v0.0.1
+- ghcr.io/appscode/virtual-secrets-server:v0.0.1

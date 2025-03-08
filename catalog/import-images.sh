@@ -26,4 +26,4 @@ tar -zxvf $TARBALL
 
 CMD="./crane"
 
-$CMD push --allow-nondistributable-artifacts --insecure images/virtual-secrets-virtual-secrets-operator-v0.0.1.tar $IMAGE_REGISTRY/virtual-secrets/virtual-secrets-operator:v0.0.1
+$CMD push --allow-nondistributable-artifacts --insecure images/appscode-virtual-secrets-server-v0.0.1.tar $IMAGE_REGISTRY/appscode/virtual-secrets-server:v0.0.1

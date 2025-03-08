@@ -24,4 +24,4 @@ fi
 TARBALL=${1:-}
 tar -zxvf $TARBALL
 
-k3s ctr images import images/virtual-secrets-virtual-secrets-operator-v0.0.1.tar
+k3s ctr images import images/appscode-virtual-secrets-server-v0.0.1.tar

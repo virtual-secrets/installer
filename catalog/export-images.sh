@@ -32,6 +32,6 @@ mv /tmp/crane images
 
 CMD="./images/crane"
 
-$CMD pull --allow-nondistributable-artifacts --insecure virtual-secrets/virtual-secrets-operator:v0.0.1 images/virtual-secrets-virtual-secrets-operator-v0.0.1.tar
+$CMD pull --allow-nondistributable-artifacts --insecure ghcr.io/appscode/virtual-secrets-server:v0.0.1 images/appscode-virtual-secrets-server-v0.0.1.tar
 
 tar -czvf images.tar.gz images
