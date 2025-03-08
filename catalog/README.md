@@ -1,0 +1,5 @@
+# CVE Report
+|                                                                      IMAGE REF                                                                       |      OS       | CRITICAL<BR>(OS, OTHER) | HIGH<BR>(OS, OTHER) | MEDIUM<BR>(OS, OTHER) | LOW<BR>(OS, OTHER) | UNKNOWN<BR>(OS, OTHER) |
+|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|-------------------------|---------------------|-----------------------|--------------------|------------------------|
+| ghcr.io/appscode/secrets-store-csi-driver-provider-virtual-secrets:v0.0.1<br>sha256:d6da9324fbba527ff694fefd01ebca5a0d8e54a08d36adfa8be0e974ac1be17e | alpine 3.21.3 | 0, 0                    | 0, 0                | 0, 0                  | 0, 0               | 0, 0                   |
+| ghcr.io/appscode/virtual-secrets-server:v0.0.1<br>sha256:4f5f46af38a4c953dc633a83e2a228d951f95130b5d422aca1f3d65f6b42d30c                            | alpine 3.21.3 | 0, 0                    | 0, 0                | 0, 1                  | 0, 0               | 0, 0                   |
