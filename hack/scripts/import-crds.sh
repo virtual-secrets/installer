@@ -47,4 +47,4 @@ fi
 
 crd-importer \
     --input=${crd_dir} \
-    --out=./charts/virtual-secrets/crds
+    --out=./charts/virtual-secrets-server/crds

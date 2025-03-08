@@ -35,4 +35,4 @@ mv /tmp/crane .
 
 CMD="./crane"
 
-$CMD cp --allow-nondistributable-artifacts --insecure ghcr.io/virtual-secrets/virtual-secrets-operator:v0.0.1 $IMAGE_REGISTRY/virtual-secrets/virtual-secrets-operator:v0.0.1
+$CMD cp --allow-nondistributable-artifacts --insecure virtual-secrets/virtual-secrets-operator:v0.0.1 $IMAGE_REGISTRY/virtual-secrets/virtual-secrets-operator:v0.0.1

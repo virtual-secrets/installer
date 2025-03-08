@@ -16,4 +16,4 @@
 
 set -e
 
-helm dependency update charts/virtual-secrets
+helm dependency update charts/virtual-secrets-server

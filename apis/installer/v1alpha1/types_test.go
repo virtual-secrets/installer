@@ -27,7 +27,7 @@ import (
 
 func TestDefaultValues(t *testing.T) {
 	checker := schemachecker.New(os.DirFS("../../.."),
-		schemachecker.TestCase{Obj: v1alpha1.VirtualSecretsSpec{}},
+		schemachecker.TestCase{Obj: v1alpha1.VirtualSecretsServerSpec{}},
 	)
 	checker.TestAll(t)
 }
