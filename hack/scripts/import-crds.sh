@@ -16,10 +16,10 @@
 
 set -eou pipefail
 
-crd_dir=${1:-}
+crd_dir=${1:-}/apimachinery/crds
 
-api_repo_url=https://github.com/virtual-secrets/operator.git
-api_repo_tag=${VIRTUAL_SECRETS_OPERATOR_TAG:-master}
+api_repo_url=https://github.com/virtual-secrets/apimachinery.git
+api_repo_tag=${VIRTUAL_SECRETS_APIMACHINERY_TAG:-master}
 
 if [ "$#" -ne 1 ]; then
     if [ "${api_repo_tag}" == "master" ]; then
@@ -47,4 +47,4 @@ fi
 
 crd-importer \
     --input=${crd_dir} \
-    --out=./charts/virtual-secrets/crds
+    --out=./charts/virtual-secrets-server/crds

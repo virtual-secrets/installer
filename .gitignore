@@ -37,5 +37,4 @@ _testmain.go
 .terraform
 *.tfstate*
 
-/charts/kubevault/charts
-/charts/kubevault-opscenter/charts
+/charts/virtual-secrets-server/charts

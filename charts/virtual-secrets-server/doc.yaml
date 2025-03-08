@@ -1,0 +1,18 @@
+project:
+  name: Virtual Secrets Server by AppsCode
+  shortName: Virtual Secrets Server
+  url: https://github.com/virtual-secrets
+  description: Virtual Secrets Server by AppsCode
+  app: a Virtual Secrets Server
+repository:
+  url: https://charts.appscode.com/stable/
+  name: appscode
+chart:
+  name: virtual-secrets-server
+  values: -- generate from values file --
+  valuesExample: -- generate from values file --
+prerequisites:
+- Kubernetes 1.26+
+release:
+  name: virtual-secrets-server
+  namespace: kubevault

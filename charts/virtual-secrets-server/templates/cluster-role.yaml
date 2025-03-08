@@ -1,0 +1,42 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "virtual-secrets-server.fullname" . }}
+  labels:
+    {{- include "virtual-secrets-server.labels" . | nindent 4 }}
+rules:
+- apiGroups:
+  - virtual-secrets.dev
+  resources:
+  - "*"
+  verbs: ["*"]
+- apiGroups:
+  - secrets-store.csi.x-k8s.io
+  resources:
+  - secretproviderclasses
+  verbs: ["get", "list", "watch", "create", "update", "delete"]
+- apiGroups:
+    - meta.virtual-secrets.dev
+  resources:
+    - secretsources
+    - secretmetadatas
+  verbs: ["get", "list", "watch", "create", "update", "delete"]
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs: ["create"]
+- apiGroups:
+  - rbac.authorization.k8s.io
+  resources:
+  - clusterroles
+  - clusterrolebindings
+  - roles
+  - rolebindings
+  - serviceaccounts
+  verbs: ["get", "list", "watch"]
+- apiGroups:
+    - ""
+  resources:
+    - "*"
+  verbs: ["*"]
