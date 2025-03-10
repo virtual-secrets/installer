@@ -33,6 +33,9 @@ rules:
   - apiGroups: [""]
     resources: ["nodes"]
     verbs: ["get"]
+  - apiGroups: ["virtual-secrets.dev"]
+    resources: ["secrets"]
+    verbs: ["get"]
 ---
 apiVersion: v1
 kind: ServiceAccount

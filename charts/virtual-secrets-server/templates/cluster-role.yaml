@@ -16,7 +16,7 @@ rules:
   - secretproviderclasses
   verbs: ["get", "list", "watch", "create", "update", "delete"]
 - apiGroups:
-    - meta.virtual-secrets.dev
+    - config.virtual-secrets.dev
   resources:
     - secretsources
     - secretmetadatas
