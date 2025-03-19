@@ -1,5 +1,7 @@
+registryFQDN: ghcr.io
 image:
-  repository: ghcr.io/appscode/secrets-store-csi-driver-provider-virtual-secrets
+  registry: appscode
+  repository: secrets-store-csi-driver-provider-virtual-secrets
   pullPolicy: IfNotPresent
   tag: v0.0.1
 

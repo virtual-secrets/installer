@@ -27,7 +27,7 @@ spec:
       hostNetwork: false
       containers:
         - name: provider-virtual-secrets
-          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          image: {{ include "image.registry" . }}/{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
             - --provider-volume={{ .Values.providerVolume }}
