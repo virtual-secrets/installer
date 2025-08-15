@@ -61,9 +61,9 @@ ARCH := $(if $(GOARCH),$(GOARCH),$(shell go env GOARCH))
 BASEIMAGE_PROD   ?= gcr.io/distroless/static-debian12
 BASEIMAGE_DBG    ?= debian:12
 
-GO_VERSION       ?= 1.24
+GO_VERSION       ?= 1.25
 BUILD_IMAGE      ?= ghcr.io/appscode/golang-dev:$(GO_VERSION)
-CHART_TEST_IMAGE ?= quay.io/helmpack/chart-testing:v3.11.0
+CHART_TEST_IMAGE ?= quay.io/helmpack/chart-testing:v3.13.0
 
 OUTBIN = bin/$(OS)_$(ARCH)/$(BIN)
 ifeq ($(OS),windows)
@@ -445,7 +445,7 @@ add-license:
 		--env HTTP_PROXY=$(HTTP_PROXY)                   \
 		--env HTTPS_PROXY=$(HTTPS_PROXY)                 \
 		$(BUILD_IMAGE)                                   \
-		ltag -t "./hack/license" --excludes "vendor contrib libbuild" -v
+		ltag -t "./hack/license" --excludes ".go vendor contrib libbuild" -v
 
 .PHONY: check-license
 check-license:
@@ -458,7 +458,7 @@ check-license:
 		--env HTTP_PROXY=$(HTTP_PROXY)                   \
 		--env HTTPS_PROXY=$(HTTPS_PROXY)                 \
 		$(BUILD_IMAGE)                                   \
-		ltag -t "./hack/license" --excludes "vendor contrib libbuild" --check -v
+		ltag -t "./hack/license" --excludes ".go vendor contrib libbuild" --check -v
 
 .PHONY: ci
 ci: verify check-license lint build unit-tests #cover
