@@ -2,8 +2,8 @@ apiVersion: v2
 name: virtual-secrets-server
 description: A Helm chart for Virtual Secrets Server by AppsCode
 type: application
-version: v2025.3.14
-appVersion: v0.1.0
+version: v2025.9.15
+appVersion: v0.2.0
 home: https://virtual-secrets.dev
 icon: https://cdn.appscode.com/images/products/kubevault/icons/android-icon-192x192.png
 sources:
