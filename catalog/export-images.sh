@@ -33,6 +33,6 @@ mv /tmp/crane images
 CMD="./images/crane"
 
 $CMD pull --allow-nondistributable-artifacts --insecure ghcr.io/appscode/secrets-store-csi-driver-provider-virtual-secrets:v0.0.1 images/appscode-secrets-store-csi-driver-provider-virtual-secrets-v0.0.1.tar
-$CMD pull --allow-nondistributable-artifacts --insecure ghcr.io/appscode/virtual-secrets-server:v0.1.0 images/appscode-virtual-secrets-server-v0.1.0.tar
+$CMD pull --allow-nondistributable-artifacts --insecure ghcr.io/appscode/virtual-secrets-server:v0.2.0 images/appscode-virtual-secrets-server-v0.2.0.tar
 
 tar -czvf images.tar.gz images
