@@ -1,6 +1,6 @@
 module go.virtual-secrets.dev/installer
 
-go 1.25.5
+go 1.24.0
 
 require (
 	github.com/gogo/protobuf v1.3.2
