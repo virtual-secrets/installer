@@ -19,6 +19,7 @@ package v1alpha1
 import (
 	core "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"kmodules.xyz/resource-metadata/apis/shared"
 )
 
 const (
@@ -47,41 +48,42 @@ type OperatorShardManagerSpec struct {
 	//+optional
 	NameOverride string `json:"nameOverride"`
 	//+optional
-	FullnameOverride string `json:"fullnameOverride"`
-	//+optional
-	RegistryFQDN string         `json:"registryFQDN"`
-	ReplicaCount int32          `json:"replicaCount"`
-	Image        ImageReference `json:"image"`
+	FullnameOverride string    `json:"fullnameOverride"`
+	ReplicaCount     int       `json:"replicaCount"`
+	RegistryFQDN     string    `json:"registryFQDN"`
+	Image            Container `json:"image"`
+	ImagePullPolicy  string    `json:"imagePullPolicy"`
 	//+optional
 	ImagePullSecrets []string `json:"imagePullSecrets"`
+	//+optional
+	CriticalAddon bool `json:"criticalAddon"`
+	//+optional
+	LogLevel int32 `json:"logLevel"`
+	//+optional
+	Annotations map[string]string `json:"annotations"`
 	//+optional
 	PodAnnotations map[string]string `json:"podAnnotations"`
 	//+optional
 	PodLabels map[string]string `json:"podLabels"`
+	//+optional
+	NodeSelector map[string]string `json:"nodeSelector"`
 	// PodSecurityContext holds pod-level security attributes and common container settings.
 	// Optional: Defaults to empty.  See type description for default values of each field.
 	// +optional
 	PodSecurityContext *core.PodSecurityContext `json:"podSecurityContext"`
-	//+optional
-	SecurityContext *core.SecurityContext `json:"securityContext"`
-	//+optional
-	Resources core.ResourceRequirements `json:"resources"`
-	//+optional
-	NodeSelector map[string]string `json:"nodeSelector"`
 	// If specified, the pod's tolerations.
 	// +optional
 	Tolerations []core.Toleration `json:"tolerations"`
 	// If specified, the pod's scheduling constraints
 	// +optional
-	Affinity *core.Affinity `json:"affinity"`
+	Affinity       *core.Affinity      `json:"affinity"`
+	ServiceAccount ServiceAccountSpec  `json:"serviceAccount"`
+	Apiserver      SupervisorApiserver `json:"apiserver"`
+	Monitoring     Monitoring          `json:"monitoring"`
 	// +optional
-	LivenessProbe *core.Probe `json:"livenessProbe"`
+	NetworkPolicy NetworkPolicySpec `json:"networkPolicy"`
 	// +optional
-	ReadinessProbe *core.Probe        `json:"readinessProbe"`
-	Service        ServiceSpec        `json:"service"`
-	ServiceAccount ServiceAccountSpec `json:"serviceAccount"`
-	Volumes        []core.Volume      `json:"volumes"`
-	VolumeMounts   []core.VolumeMount `json:"volumeMounts"`
+	Distro shared.DistroSpec `json:"distro"`
 }
 
 type ImageReference struct {

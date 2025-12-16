@@ -27,7 +27,7 @@ spec:
       hostNetwork: false
       containers:
         - name: provider-virtual-secrets
-          image: {{ include "image.registry" . }}/{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}
+          image: {{ include "image.registry" . }}/{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}{{ include "operator.ubi" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
             - --provider-volume={{ .Values.providerVolume }}
@@ -40,9 +40,14 @@ spec:
             {{- end }}
             {{- end }}
           resources:
-{{ toYaml .Values.resources | indent 12 }}
+            {{- toYaml .Values.resources | nindent 12 }}
+          {{- if eq "true" ( include "distro.openshift" . ) }}
           securityContext:
-{{ toYaml .Values.securityContext | indent 12 }}
+            {{- toYaml (omit .Values.securityContext "runAsUser" "runAsGroup" "fsGroup" "supplementalGroups") | nindent 12 }}
+          {{- else }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          {{- end }}
           volumeMounts:
             - mountPath: {{ .Values.providerVolume }}
               name: providervol

@@ -45,33 +45,35 @@ The command removes all the Kubernetes components associated with the chart and 
 
 The following table lists the configurable parameters of the `secrets-store-csi-driver-provider-virtual-secrets` chart and their default values.
 
-|                Parameter                 | Description |                            Default                             |
-|------------------------------------------|-------------|----------------------------------------------------------------|
-| registryFQDN                             |             | <code>ghcr.io</code>                                           |
-| image.registry                           |             | <code>appscode</code>                                          |
-| image.repository                         |             | <code>secrets-store-csi-driver-provider-virtual-secrets</code> |
-| image.pullPolicy                         |             | <code>IfNotPresent</code>                                      |
-| image.tag                                |             | <code>v0.0.1</code>                                            |
-| nameOverride                             |             | <code>""</code>                                                |
-| fullnameOverride                         |             | <code>""</code>                                                |
-| providerVolume                           |             | <code>"/etc/kubernetes/secrets-store-csi-providers"</code>     |
-| kubeletPath                              |             | <code>"/var/lib/kubelet"</code>                                |
-| podLabels                                |             | <code>{}</code>                                                |
-| podAnnotations                           |             | <code>{}</code>                                                |
-| affinity                                 |             | <code>{}</code>                                                |
-| resources.requests.cpu                   |             | <code>50m</code>                                               |
-| resources.requests.memory                |             | <code>100Mi</code>                                             |
-| resources.limits.cpu                     |             | <code>50m</code>                                               |
-| resources.limits.memory                  |             | <code>100Mi</code>                                             |
-| priorityClassName                        |             | <code>""</code>                                                |
-| nodeSelector                             |             | <code>{}</code>                                                |
-| tolerations                              |             | <code>[]</code>                                                |
-| port                                     |             | <code>8989</code>                                              |
-| updateStrategy.type                      |             | <code>RollingUpdate</code>                                     |
-| imagePullSecrets                         |             | <code>[]</code>                                                |
-| rbac.install                             |             | <code>true</code>                                              |
-| securityContext.privileged               |             | <code>false</code>                                             |
-| securityContext.allowPrivilegeEscalation |             | <code>false</code>                                             |
+|                Parameter                 |              Description              |                            Default                             |
+|------------------------------------------|---------------------------------------|----------------------------------------------------------------|
+| registryFQDN                             |                                       | <code>ghcr.io</code>                                           |
+| image.registry                           |                                       | <code>appscode</code>                                          |
+| image.repository                         |                                       | <code>secrets-store-csi-driver-provider-virtual-secrets</code> |
+| image.pullPolicy                         |                                       | <code>IfNotPresent</code>                                      |
+| image.tag                                |                                       | <code>v0.0.1</code>                                            |
+| nameOverride                             |                                       | <code>""</code>                                                |
+| fullnameOverride                         |                                       | <code>""</code>                                                |
+| providerVolume                           |                                       | <code>"/etc/kubernetes/secrets-store-csi-providers"</code>     |
+| kubeletPath                              |                                       | <code>"/var/lib/kubelet"</code>                                |
+| podLabels                                |                                       | <code>{}</code>                                                |
+| podAnnotations                           |                                       | <code>{}</code>                                                |
+| affinity                                 |                                       | <code>{}</code>                                                |
+| resources.requests.cpu                   |                                       | <code>50m</code>                                               |
+| resources.requests.memory                |                                       | <code>100Mi</code>                                             |
+| resources.limits.cpu                     |                                       | <code>50m</code>                                               |
+| resources.limits.memory                  |                                       | <code>100Mi</code>                                             |
+| priorityClassName                        |                                       | <code>""</code>                                                |
+| nodeSelector                             |                                       | <code>{}</code>                                                |
+| tolerations                              |                                       | <code>[]</code>                                                |
+| port                                     |                                       | <code>8989</code>                                              |
+| updateStrategy.type                      |                                       | <code>RollingUpdate</code>                                     |
+| imagePullSecrets                         |                                       | <code>[]</code>                                                |
+| rbac.install                             |                                       | <code>true</code>                                              |
+| securityContext.privileged               |                                       | <code>false</code>                                             |
+| securityContext.allowPrivilegeEscalation |                                       | <code>false</code>                                             |
+| distro.openshift                         | Set true, if installed in OpenShift   | <code>false</code>                                             |
+| distro.ubi                               | Set operator or all to use ubi images | <code>""</code>                                                |
 
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm upgrade -i`. For example:

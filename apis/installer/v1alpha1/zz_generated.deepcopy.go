@@ -356,6 +356,7 @@ func (in *VirtualSecretsServerSpec) DeepCopyInto(out *VirtualSecretsServerSpec) 
 	in.ServiceAccount.DeepCopyInto(&out.ServiceAccount)
 	out.Apiserver = in.Apiserver
 	in.Monitoring.DeepCopyInto(&out.Monitoring)
+	out.Distro = in.Distro
 	in.AceUserRoles.DeepCopyInto(&out.AceUserRoles)
 	return
 }
