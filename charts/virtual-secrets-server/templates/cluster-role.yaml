@@ -14,7 +14,7 @@ rules:
   - secrets-store.csi.x-k8s.io
   resources:
   - secretproviderclasses
-  verbs: ["get", "list", "watch", "create", "update", "delete"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 - apiGroups:
     - config.virtual-secrets.dev
   resources:
