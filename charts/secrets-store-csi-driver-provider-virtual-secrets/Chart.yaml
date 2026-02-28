@@ -1,9 +1,10 @@
 apiVersion: v2
 name: secrets-store-csi-driver-provider-virtual-secrets
-description: A Helm chart for Virtual Secrets Provider for Secret Store CSI Driver by AppsCode
+description: A Helm chart for Virtual Secrets Provider for Secret Store CSI Driver
+  by AppsCode
 type: application
-version: v2025.3.14
-appVersion: v0.0.1
+version: v2026.2.27
+appVersion: v0.1.0
 home: https://virtual-secrets.dev
 icon: https://cdn.appscode.com/images/products/kubevault/icons/android-icon-192x192.png
 sources:
