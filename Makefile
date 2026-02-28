@@ -172,7 +172,7 @@ gen-crds:
 			paths="./apis/..."              \
 			output:crd:artifacts:config=.crds
 
-crds_to_patch := installer.virtual-secrets.dev_kubevaultoperators.yaml
+crds_to_patch := installer.virtual-secrets.dev_virtualsecretsservers.yaml
 
 .PHONY: patch-crds
 patch-crds: $(addprefix patch-crd-, $(crds_to_patch))
@@ -184,8 +184,8 @@ patch-crd-%: $(BUILD_DIRS)
 .PHONY: label-crds
 label-crds: $(BUILD_DIRS)
 	@for f in .crds/*.yaml; do \
-		echo "applying app.kubernetes.io/name=kubevault label to $$f"; \
-		kubectl label --overwrite -f $$f --local=true -o yaml app.kubernetes.io/name=kubevault > bin/crd.yaml; \
+		echo "applying app.kubernetes.io/name=virtual-secrets label to $$f"; \
+		kubectl label --overwrite -f $$f --local=true -o yaml app.kubernetes.io/name=virtual-secrets > bin/crd.yaml; \
 		mv bin/crd.yaml $$f; \
 	done
 
@@ -272,8 +272,6 @@ contents-%:
 	@yq -y --indentless -i '.repository.url="$(CHART_REGISTRY_URL)"' ./charts/$*/doc.yaml
 	@if [ -n "$(CHART_VERSION)" ]; then \
 	  yq -y --indentless -i '.version="$(CHART_VERSION)"' ./charts/$*/Chart.yaml; \
-	  yq -y --indentless -i '.dependencies |= map(select(.name == "$*").version="$(CHART_VERSION)")' ./charts/kubevault/Chart.yaml; \
-	  yq -y --indentless -i '.dependencies |= map(select(.name == "$*").version="$(CHART_VERSION)")' ./charts/kubevault-opscenter/Chart.yaml; \
 	fi
 	@if [ ! -z "$(APP_VERSION)" ]; then                                               \
 		yq -y --indentless -i '.appVersion="$(APP_VERSION)"' ./charts/$*/Chart.yaml;    \
