@@ -3,7 +3,7 @@ image:
   registry: appscode
   repository: secrets-store-csi-driver-provider-virtual-secrets
   pullPolicy: IfNotPresent
-  tag: v0.0.1
+  tag: ""
 
 nameOverride: ""
 fullnameOverride: ""

@@ -1,2 +1,2 @@
-- ghcr.io/appscode/secrets-store-csi-driver-provider-virtual-secrets:v0.0.1
-- ghcr.io/appscode/virtual-secrets-server:v0.2.0
+- ghcr.io/appscode/secrets-store-csi-driver-provider-virtual-secrets:v0.1.0
+- ghcr.io/appscode/virtual-secrets-server:v0.3.0

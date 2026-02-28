@@ -35,5 +35,5 @@ mv /tmp/crane .
 
 CMD="./crane"
 
-$CMD cp --allow-nondistributable-artifacts --insecure ghcr.io/appscode/secrets-store-csi-driver-provider-virtual-secrets:v0.0.1 $IMAGE_REGISTRY/appscode/secrets-store-csi-driver-provider-virtual-secrets:v0.0.1
-$CMD cp --allow-nondistributable-artifacts --insecure ghcr.io/appscode/virtual-secrets-server:v0.2.0 $IMAGE_REGISTRY/appscode/virtual-secrets-server:v0.2.0
+$CMD cp --allow-nondistributable-artifacts --insecure ghcr.io/appscode/secrets-store-csi-driver-provider-virtual-secrets:v0.1.0 $IMAGE_REGISTRY/appscode/secrets-store-csi-driver-provider-virtual-secrets:v0.1.0
+$CMD cp --allow-nondistributable-artifacts --insecure ghcr.io/appscode/virtual-secrets-server:v0.3.0 $IMAGE_REGISTRY/appscode/virtual-secrets-server:v0.3.0

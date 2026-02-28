@@ -24,5 +24,5 @@ fi
 TARBALL=${1:-}
 tar -zxvf $TARBALL
 
-k3s ctr images import images/appscode-secrets-store-csi-driver-provider-virtual-secrets-v0.0.1.tar
-k3s ctr images import images/appscode-virtual-secrets-server-v0.2.0.tar
+k3s ctr images import images/appscode-secrets-store-csi-driver-provider-virtual-secrets-v0.1.0.tar
+k3s ctr images import images/appscode-virtual-secrets-server-v0.3.0.tar
