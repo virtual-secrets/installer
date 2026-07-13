@@ -31,6 +31,8 @@ All Make targets run inside the `ghcr.io/appscode/golang-dev` Docker image — D
 - `make gen-values-schema` — regenerate `values.openapiv3_schema.yaml` from the Go types in `apis/installer/v1alpha1`.
 - `make gen-chart-doc` — regenerate per-chart `README.md` (one target per chart subdir under `charts/`).
 - `make update-charts` — refresh chart-level metadata (one target per chart subdir).
+- `make update-catalog` — install image-packer and regenerate `catalog/` from `imagelist.yaml`.
+- `make refresh` — `gen update-catalog fmt`. **ALWAYS run this before opening a PR** so generated files are current.
 - `make fmt` — gofmt + goimports across `apis client hack/gencrd`.
 - `make lint` — golangci-lint.
 - `make unit-tests` / `make test` — Go unit tests.
@@ -40,7 +42,7 @@ All Make targets run inside the `ghcr.io/appscode/golang-dev` Docker image — D
 
 Auxiliary helpers (invoked outside Make):
 
-- `./hack/scripts/update-catalog.sh` — regenerate `catalog/` from `imagelist.yaml` via image-packer.
+- `./hack/scripts/update-catalog.sh` — regenerate `catalog/` from `imagelist.yaml` via image-packer (wrapped by `make update-catalog`).
 - `./hack/scripts/import-crds.sh` — pull CRDs from dependent repos into the chart `crds/` dirs.
 - `./hack/scripts/update-chart-dependencies.sh` — refresh `Chart.lock` / subchart pins.
 
