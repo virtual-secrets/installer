@@ -256,6 +256,24 @@ manifests: gen-crds gen-values-schema gen-chart-doc
 .PHONY: gen
 gen: clientset manifests
 
+BIN_DIR ?= $(CURDIR)/bin/$(OS)_$(ARCH)
+
+.PHONY: install-image-packer
+install-image-packer:
+	@mkdir -p $(BIN_DIR)
+	curl -fsSL -o $(BIN_DIR)/image-packer.tar.gz https://github.com/kmodules/image-packer/releases/latest/download/image-packer-$(OS)-$(ARCH).tar.gz
+	tar -xzf $(BIN_DIR)/image-packer.tar.gz -C $(BIN_DIR)
+	chmod +x $(BIN_DIR)/image-packer-$(OS)-$(ARCH)
+	mv $(BIN_DIR)/image-packer-$(OS)-$(ARCH) $(BIN_DIR)/image-packer
+	rm -f $(BIN_DIR)/image-packer.tar.gz
+
+.PHONY: update-catalog
+update-catalog: install-image-packer
+	PATH="$(BIN_DIR):$$PATH" ./hack/scripts/update-catalog.sh
+
+.PHONY: refresh
+refresh: gen update-catalog fmt
+
 CHART_REGISTRY     ?= appscode
 CHART_REGISTRY_URL ?= https://charts.appscode.com/stable/
 CHART_VERSION      ?=
